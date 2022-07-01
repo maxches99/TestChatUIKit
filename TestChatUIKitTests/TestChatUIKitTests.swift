@@ -8,29 +8,30 @@
 import XCTest
 @testable import TestChatUIKit
 
+// хотел написать тесты, но не успел, понял что без сторонних библиотек будет очень много инитов и по времени просто не вывезу
+
 class TestChatUIKitTests: XCTestCase {
+    
+    fileprivate lazy var getMessagesService = GetMessagesService()
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testGetMessagesService() throws {
+        var getMessagesResponse: GetMessagesResponse? = nil
+        
+        let expectation = XCTestExpectation.init(description: "loadMessages")
+        
+        getMessagesService.loadMessages(offset: 0, completion: { response, error in
+            if error != nil
+            {
+                XCTFail("Fail")
+            }
+            getMessagesResponse = response
+            expectation.fulfill()
+        })
+        
+        wait(for: [expectation], timeout: 30.0)
+        
+        XCTAssertTrue(getMessagesResponse?.result?.count ?? 0 > 0)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    
 }

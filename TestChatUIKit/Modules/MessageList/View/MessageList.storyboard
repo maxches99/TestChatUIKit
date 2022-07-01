@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MessageListVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MessageListVC" extendedLayoutIncludesOpaqueBars="YES" id="Y6W-OH-hqX" userLabel="MessageListVC" customClass="MessageListVC" customModule="TestChatUIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wnx-H2-2DK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jGW-A7-BZO">
+                                <rect key="frame" x="0.0" y="82" width="414" height="738"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="URY-Yj-KrB">
+                                <rect key="frame" x="20" y="828" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="k7I-Nr-KgR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тестовое задание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g85-Pf-4QR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Joa-fz-pR6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jGW-A7-BZO" firstAttribute="leading" secondItem="Joa-fz-pR6" secondAttribute="leading" id="MzC-2E-OUx"/>
+                            <constraint firstItem="g85-Pf-4QR" firstAttribute="top" secondItem="Joa-fz-pR6" secondAttribute="top" id="OhA-dI-oXL"/>
+                            <constraint firstItem="jGW-A7-BZO" firstAttribute="bottom" secondItem="URY-Yj-KrB" secondAttribute="top" constant="-8" id="PkU-cr-trv"/>
+                            <constraint firstItem="g85-Pf-4QR" firstAttribute="width" secondItem="Wnx-H2-2DK" secondAttribute="width" id="XEG-gk-K4i"/>
+                            <constraint firstItem="jGW-A7-BZO" firstAttribute="top" secondItem="g85-Pf-4QR" secondAttribute="bottom" constant="8" id="Yaw-mG-7Hz"/>
+                            <constraint firstItem="g85-Pf-4QR" firstAttribute="centerX" secondItem="Joa-fz-pR6" secondAttribute="centerX" id="Zd5-iZ-fQu"/>
+                            <constraint firstItem="Joa-fz-pR6" firstAttribute="trailing" secondItem="jGW-A7-BZO" secondAttribute="trailing" id="cR1-Ui-h1e"/>
+                            <constraint firstItem="Joa-fz-pR6" firstAttribute="trailing" secondItem="URY-Yj-KrB" secondAttribute="trailing" constant="20" id="exU-Uf-ovW"/>
+                            <constraint firstItem="URY-Yj-KrB" firstAttribute="leading" secondItem="Joa-fz-pR6" secondAttribute="leading" constant="20" id="fCk-c0-Bwp"/>
+                            <constraint firstItem="URY-Yj-KrB" firstAttribute="bottom" secondItem="Joa-fz-pR6" secondAttribute="bottom" id="tVP-Vk-DZx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="keyboardHeightBottom" destination="tVP-Vk-DZx" id="kZe-aU-vSO"/>
+                        <outlet property="tableView" destination="jGW-A7-BZO" id="6nO-CU-48e"/>
+                        <outlet property="textField" destination="URY-Yj-KrB" id="b3K-PB-H8z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
